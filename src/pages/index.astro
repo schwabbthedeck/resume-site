@@ -8,14 +8,14 @@ import SkillLayout from '../components/SkillLayout.astro'
 import PostPreview from '@/components/blog/PostPreview.astro'
 
 import { Image } from 'astro:assets'
-import astro from '../assets/about-astro.png'
+import astro from '../assets/ProfilePic.png'
 
 import { getAllPosts, sortMDByDate } from '@/utils'
 
-const languages = ['python', 'JavaScript', 'MATLAB']
-const frontend = ['React', 'Vue', 'lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
-const backend = ['Postgres', 'ipsum', 'lorem', 'ipsum']
-const others = ['lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
+const languages = ['python', 'JavaScript', 'C#', 'MATLAB']
+const frontend = ['React', 'Vue', 'Astro']
+const backend = ['PostgreSQL', 'MySQL']
+const others = ['PowerShell', 'Linux', 'LaTeX']
 
 const MAX_POSTS = 10
 const allPosts = await getAllPosts()
@@ -28,12 +28,12 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			<Image
 				src={astro}
 				alt='profile photo'
-				class='h-28 w-auto rounded-full bg-[#FFBE98] p-2'
+				class='h-28 w-auto rounded-full bg-[#FFBE98]'
 				loading='eager'
 			/>
 
 			<div class='flex flex-col items-center gap-y-4'>
-				<h1 class='text-3xl font-bold'>Lorem ipsum dolor</h1>
+				<h1 class='text-3xl font-bold'>Jane Schwab</h1>
 				<!-- <a
 					href='https://github.com/srleom/astro-theme-resume.git'
 					class='flex flex-row items-center gap-x-3 rounded-3xl border border-input px-4 py-2 text-sm shadow-sm transition-all hover:shadow-md'
@@ -48,7 +48,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 					<p class='font-medium'>Get free template</p>
 				</a> -->
 				<div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
-					<Label title='Lorem Ipsum'>
+					<Label title='Manager | Developer | Consultant'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
 								fill='currentColor'
@@ -56,7 +56,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 							></path></svg
 						>
 					</Label>
-					<Label title='Ipsum'>
+					<Label title='Pittsburgh'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
 								fill='currentColor'
@@ -67,7 +67,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 					<Label
 						title='Connect on Linkedin'
 						as='a'
-						href='https://www.linkedin.com/in/example/'
+						href='https://www.linkedin.com/in/jane-schwab/'
 						target='_blank'
 					>
 						<svg
@@ -135,42 +135,15 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			/>
 		</Section>
 
-		<Section title='Education'>
-			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-12 w-auto md:-left-16'
-			>
-				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-						molestiae laboriosam pariatur!
-
-						<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
-					</li>
-				</ul>
-			</Card>
-			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-12 w-auto md:-left-16'
-			/>
-		</Section>
-
 		<Section title='Projects'>
 			<div class='flex flex-col gap-y-3 sm:flex-row sm:gap-x-3 sm:gap-y-0'>
 				<ProjectCard
-					href='https://www.google.com'
-					heading='Consectetur'
-					subheading='Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-					imagePath='/src/assets/coming-soon.png'
-					altText='Example'
+					href='https://github.com/schwabbthedeck/random-workout-generator'
+					target='_blank'
+					heading='Random Workout Generator'
+					subheading='A random workout generator: get one random workout move, a random yoga pose, or customize your random workout.'
+					imagePath='/src/assets/RandomWorkoutGeneratorLandingPage.png'
+					altText='Random Workout Generator'
 					class='w-full sm:w-1/2'
 				/>
 				<ProjectCard
@@ -178,7 +151,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 					heading='Coming soon...'
 					subheading=''
 					imagePath='/src/assets/coming-soon.png'
-					altText='Lorem, ipsum dolor sit'
+					altText='Computer image for coming soon project'
 					class='w-full sm:w-1/2'
 				/>
 			</div>
@@ -212,6 +185,34 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			<SkillLayout title='Frontend' skills={frontend} />
 			<SkillLayout title='Backend' skills={backend} />
 			<SkillLayout title='Others' skills={others} />
+		</Section>
+
+		<Section title='Education'>
+			<Card
+				heading='M.S.E., Mechanical Engineering'
+				subheading='Johns Hopkins University'
+				date='May 2014'
+				imageClass='h-12 w-auto md:-left-16'
+			>
+				<ul class='ml-4 list-disc text-muted-foreground'>
+					<li>
+						Area of Concentration: Fluid Mechanics
+						<!-- <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li> -->
+					</li>
+				</ul>
+			</Card>
+			<Card
+				heading='B.S., Mechanical Engineering'
+				subheading='University of New Haven'
+				date='May 2012'
+				imageClass='h-12 w-auto md:-left-16'
+			>
+				<ul class='ml-4 list-disc text-muted-foreground'>
+					<li>
+						Minor: Mathematics
+					</li>
+				</ul>
+			</Card>
 		</Section>
 	</div>
 	<!-- <a
